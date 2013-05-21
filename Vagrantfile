@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
 
 	config.vm.provision :ansible do |ansible|
 		ansible.playbook = "./provision/system.yml"
-		ansible.inventory_file = "./provision/vagrant_hosts.ini"
+		ansible.inventory_file = "./provision/plugin/inventory/vagrant.py"
 		ansible.sudo = true
 		ansible.verbose = true
 	end
