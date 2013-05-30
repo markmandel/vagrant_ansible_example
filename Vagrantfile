@@ -48,6 +48,17 @@ Vagrant.configure("2") do |config|
 	# View the documentation for the provider you're using for more
 	# information on available options.
 
+	#try a second box
+=begin
+	config.vm.define :one do |one|
+		one.vm.box = "precise64"
+	end
+
+	config.vm.define :two do |two|
+		two.vm.box = "precise64"
+	end
+=end
+
 	config.vm.provision :ansible do |ansible|
 		ansible.playbook = "./provision/system.yml"
 		ansible.inventory_file = "./provision/plugin/inventory/vagrant.py"
